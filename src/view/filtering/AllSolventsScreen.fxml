@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+
+<BorderPane id="sub-screen" fx:controller="view.filtering.AllSolventsView" xmlns:fx="http://javafx.com/fxml" >
+
+	<center>
+		<GridPane fx:id="grid" BorderPane.alignment="CENTER">
+			<HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+				<Button 
+					fx:id="filterScreenButton"
+					id="sussolButton"
+					text="Filter Solvents" 								
+					onAction="#onFilterScreenButtonClicked"/>
+			</HBox>
+			<!-- <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0">
+				<TextField fx:id="nrOfSolventsTextField" alignment="CENTER" editable="false"/>
+			</HBox> -->
+			<HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0">
+				<Label fx:id="nrOfSolventsLabel" textAlignment="CENTER"/>
+			</HBox>
+			<HBox alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="0">
+				<Spinner fx:id="solventNumberSpinner" prefHeight="20.0" prefWidth="100.0" editable="false"/>
+			</HBox>
+			<HBox alignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="0">
+				<TextField fx:id="solventNameTextField" alignment="CENTER"/>
+			</HBox>
+			<BubbleChart fx:id="solventsChart" legendVisible="false" GridPane.columnSpan="4" GridPane.columnIndex="0" GridPane.rowIndex="1">
+				<xAxis> <NumberAxis side="BOTTOM" /> </xAxis>
+				<yAxis> <NumberAxis side="LEFT" /> </yAxis>
+			</BubbleChart>
+		</GridPane>
+	</center>
+	
+</BorderPane>
+
+				

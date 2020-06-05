@@ -1,0 +1,86 @@
+.root
+{
+    -fx-font-size: 14pt;
+    -fx-font-family: "Arial";
+    -fx-base: slategray;
+}
+
+#sussolButton
+{
+	-fx-text-fill: ivory;
+	-fx-background-color: maroon;
+}
+
+#sussolButton:hover
+{
+    -fx-cursor: hand;
+    -fx-background-color: red;
+}
+
+#sussolLabel
+{
+	-fx-text-fill: ivory;
+	-fx-font-size: 16pt;
+	-fx-padding: 10;
+}
+
+#titleLabel
+{
+    -fx-font-size: 24pt;
+    -fx-text-fill: ivory;
+}
+
+/* Charts */
+.chart 
+{
+    -fx-padding: 10px;
+}
+.chart-content 
+{
+    -fx-padding: 30px;    
+}
+.chart-title 
+{
+	-fx-text-fill: ivory;
+	-fx-font-size: 1.6em;
+}
+.axis-label
+{
+	-fx-text-fill: ivory;
+}
+.chart-horizontal-grid-lines 
+{
+    -fx-stroke: #3278fa;
+}
+.chart-plot-background 
+{
+    -fx-background-color: radial-gradient(radius 180%, #e2ecfe, derive(burlywood, -30%), derive(#e2ecfe, 30%));
+}
+.axis 
+{ 
+    -fx-tick-label-fill: ivory;
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}
+.chart-legend 
+{
+   -fx-background-color:  transparent;
+   -fx-padding: 20px;
+}
+.chart-legend-item-symbol
+{
+   -fx-background-radius: 0;
+}
+.chart-legend-item
+{
+    -fx-text-fill: rgb(25, 25, 112);
+}
+
+/* Cluster Bubble */
+.chart-bubble
+{
+	-fx-background-color: radial-gradient(radius 180%, darkred, derive(burlywood, -30%), derive(darkred, 30%));
+	-fx-opacity: 0.70;
+}
+
+

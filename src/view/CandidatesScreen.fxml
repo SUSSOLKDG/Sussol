@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" id="sub-screen" fx:controller="view.CandidatesView">
+
+	<center>
+		<GridPane fx:id="candidatesGrid" BorderPane.alignment="CENTER" gridLinesVisible="true">
+		
+			<GridPane fx:id="buttonGrid" GridPane.columnIndex="0" GridPane.RowIndex="0" >
+				<Button fx:id="resetButton" id="sussolButton" GridPane.columnIndex="0" text="Reset All Solvents" onAction="#onResetButtonClicked" />
+				<Button fx:id="normaliseButton" id="sussolButton" GridPane.columnIndex="1" text="Normalised Values" onAction="#onNormaliseButtonClicked" />
+				<Button fx:id="exportButton" id="sussolButton" GridPane.columnIndex="2" text="Export" onAction="#onExportButtonClicked" />
+			</GridPane>
+
+			<GridPane fx:id="dataGrid" GridPane.columnIndex="0" GridPane.RowIndex="1" >
+				<LineChart fx:id="candidatesChart" legendVisible="false" GridPane.columnIndex="0" GridPane.rowIndex="0">
+					<xAxis> <CategoryAxis fx:id="xAxis" side="BOTTOM" /> </xAxis>
+					<yAxis> <NumberAxis fx:id="yAxis" side="LEFT" /> </yAxis>
+				</LineChart>
+				<GridPane fx:id="candidatesListGrid" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0">
+					<TextField id="sussolLabel" fx:id="nrOfCandidatesTextField" alignment="CENTER" GridPane.RowIndex="0" />
+					<ListView fx:id="candidatesList" GridPane.RowIndex="1"/>
+				</GridPane>
+			</GridPane>
+			
+		</GridPane>
+	</center>
+			
+</BorderPane>
+

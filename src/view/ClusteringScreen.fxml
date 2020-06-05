@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.TextField?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" id="sub-screen" fx:controller="view.ClusteringView">
+
+	<center>
+		<GridPane fx:id="grid" BorderPane.alignment="CENTER" gridLinesVisible="false">
+			<!-- 
+				grid is de master GridPane
+				clusterGrid is een Gridpane die alles bevat van de clusters : row 0, column 0 in grid.
+				solventGrid is een Gridpane die alles bevat van de solvents : row 0, column 1 in grid.
+			-->
+			
+			<GridPane fx:id="clusterGrid" GridPane.columnIndex="0" GridPane.rowIndex="0" gridLinesVisible="false">
+				<HBox alignment="CENTER" GridPane.columnSpan="3" GridPane.rowIndex="0">
+					<Label id="titleLabel" text="Clusters" />
+				</HBox>
+				
+				<ScrollPane GridPane.columnSpan="3" GridPane.rowIndex="1">
+					<HBox fx:id="clusterLabelsHBox" alignment="CENTER"  />
+				</ScrollPane>
+				
+				<Label text="Clustering" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+				<Spinner fx:id="clusteringSpinner" prefHeight="20.0" prefWidth="100.0" editable="false" GridPane.rowIndex="2" GridPane.columnIndex="1"/>				
+				
+				<Label fx:id="numberOfSolvents" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+				
+				<BubbleChart fx:id="clustersChart" legendVisible="false" GridPane.columnSpan="2" GridPane.columnIndex="0" GridPane.rowIndex="3">
+					<xAxis> <NumberAxis side="BOTTOM" /> </xAxis>
+					<yAxis> <NumberAxis side="LEFT" /> </yAxis>
+				</BubbleChart>
+				
+				<ScrollPane GridPane.columnIndex="2" GridPane.rowIndex="3">
+					<VBox fx:id="solventsInClusterList" />
+				</ScrollPane>
+				
+			</GridPane>			
+			
+			<GridPane fx:id="solventGrid" GridPane.columnIndex="1" GridPane.rowIndex="0" gridLinesVisible="false">
+				<HBox alignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="0">
+					<Label id="titleLabel" text="Solvents" />
+				</HBox>	
+									
+				<ScrollPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+					<HBox fx:id="solventLabelsHBox" alignment="CENTER"/>
+				</ScrollPane>
+					
+				<HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+					<TextField fx:id="searchTextField" alignment="CENTER" text=" ? " onKeyReleased="#onSearch"/>
+				</HBox>
+				
+				<HBox alignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="2">
+					<Label fx:id="solventLabel" contentDisplay="CENTER" text="Solvent " />
+					<Label fx:id="solventNumber" alignment="CENTER_LEFT"/>
+					<Label fx:id="solventName" alignment="CENTER_LEFT"/>
+				</HBox>	
+				
+				<BubbleChart fx:id="solventsChart" legendVisible="false" GridPane.columnIndex="0" GridPane.rowIndex="3">
+					<xAxis> <NumberAxis side="BOTTOM" /> </xAxis>
+					<yAxis> <NumberAxis side="LEFT" /> </yAxis>
+				</BubbleChart>							
+				
+				<GridPane fx:id="solventDataGrid" GridPane.columnIndex="1" GridPane.rowIndex="3" gridLinesVisible="false">
+					
+					<GridPane fx:id="ehsDataGrid" GridPane.rowIndex="0" >
+						<HBox fx:id="ehsDataHBox" alignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="0">
+							<Label fx:id="ehsDataLabel" text="EHS Data" />
+						</HBox>
+						<HBox fx:id="environmentHBox" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1">
+							<Label fx:id="environmentLabel" text="Environment" />
+						</HBox>
+						<HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+							<Label fx:id="environmentScore" />
+						</HBox>
+						<HBox fx:id="healthHBox" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="2">
+							<Label fx:id="healthLabel" text="Health" />
+						</HBox>
+						<HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+							<Label fx:id="healthScore" />
+						</HBox>
+						<HBox fx:id="safetyHBox" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="3">
+							<Label fx:id="safetyLabel" text="Safety" />
+						</HBox>
+						<HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+							<Label fx:id="safetyScore" />
+						</HBox>								
+					</GridPane>
+					
+					<ScrollPane fx:id="featureListScrollPane" GridPane.rowIndex="1">
+						<VBox fx:id="featureListVBox"/>
+					</ScrollPane>
+					
+				</GridPane>		
+			</GridPane>
+		</GridPane>			
+	</center>
+</BorderPane>
+

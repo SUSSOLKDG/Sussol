@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" id="sub-screen" fx:controller="view.MainView">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu text="Analysis">
+					<items>
+						<MenuItem text="Restart" disable="false" onAction="#onRestart" />							
+					</items>
+				</Menu>
+				<Menu text="Visualisation">
+					<items>
+						<MenuItem fx:id="allSolventsMenuItem" text="All Solvents" disable="false" onAction="#onShowAllSolventsScreen" />							
+						<MenuItem fx:id="clusteringVisualisationMenuItem" text="Clustering" onAction="#onShowClusteringScreen" />
+					</items>
+				</Menu>
+				<Menu text="Candidates">
+					<items>
+						<MenuItem fx:id="generateCandidatesMenuItem" mnemonicParsing="true" text="Generate Candidates" onAction="#onShowCandidatesScreen" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<center>
+		<GridPane fx:id="centralGridPane" gridLinesVisible="true">
+		
+			<Label id="sussolLabel" text="Available Solvents" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+			<Label id="sussolLabel" text="Selected Solvent" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+			
+			<ScrollPane fx:id="solventsScrollPane" GridPane.columnIndex="0" GridPane.rowIndex="1">
+				<VBox fx:id="solvents" />
+			</ScrollPane>
+			
+			<GridPane fx:id="clusterGridPane" alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+				
+				<Label id="sussolLabel" text="Name" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+				<Label id="sussolLabel" text="Cas number" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+			
+				<TextField fx:id="solventName" editable="false" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+				<TextField fx:id="solventCasNumber" editable="false" alignment="CENTER"  GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+				<HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2">
+					<ProgressBar fx:id="progressBar" progress="0.0" prefWidth="400"/>
+				</HBox>
+
+				<HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2">
+					<Button 
+						fx:id="clusterButton" 
+						id="sussolButton"
+						onAction="#onClusterButtonClicked" 
+						text="Cluster"
+						alignment="CENTER"/>
+				</HBox>	
+			</GridPane>	
+		</GridPane>
+	</center>
+</BorderPane>

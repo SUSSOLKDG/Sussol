@@ -1,0 +1,5 @@
+.slider .axis .axis-tick-mark, .slider .axis .axis-minor-tick-mark 
+{
+    -fx-fill: null;
+    -fx-stroke: blue;
+}

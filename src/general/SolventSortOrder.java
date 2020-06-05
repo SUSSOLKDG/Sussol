@@ -1,0 +1,6 @@
+package general;
+
+public enum SolventSortOrder 
+{
+	BY_CLUSTER_NUMBER, BY_NAME, BY_CAS_NUMBER, BY_HES_SCORES, BY_HANSEN_DISTANCE_TO_THE_SOLVENT
+}

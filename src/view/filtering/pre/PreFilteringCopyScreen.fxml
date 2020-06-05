@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import view.filtering.pre.DataFrameSheet?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" id="sub-screen" fx:controller="view.filtering.pre.PreFilteringCopyView">
+
+	<center>
+		<GridPane fx:id="filterGrid" BorderPane.alignment="CENTER">
+			
+			<GridPane fx:id="buttonGrid" GridPane.columnIndex="0" GridPane.RowIndex="0" >
+ 				<Button fx:id="copyButton" id="sussolButton" GridPane.columnIndex="0" text="Copy" onAction="#onCopyButtonClicked" />
+				<Button fx:id="cancelButton" id="sussolButton" GridPane.columnIndex="1" text="Cancel" onAction="#onCancelButtonClicked" />
+			</GridPane>
+			
+			<GridPane fx:id="dataGrid" GridPane.columnIndex="0" GridPane.RowIndex="1" >
+				<DataFrameSheet fx:id="dataFrameSheet" GridPane.columnIndex="0" />
+				<GridPane fx:id="listGrid" alignment="CENTER" GridPane.columnIndex="1">
+					<Label GridPane.RowIndex="0" text="Features to be copied" />
+					<ListView fx:id="featuresToBeCopied" GridPane.RowIndex="1" editable="true"/>
+				</GridPane>
+			</GridPane>
+			
+		</GridPane>
+	</center>
+
+</BorderPane>
